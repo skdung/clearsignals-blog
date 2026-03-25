@@ -1,0 +1,10 @@
+{
+  "name": "clearsignals-blog",
+  "private": true,
+  "scripts": {
+    "build": "hugo"
+  },
+  "devDependencies": {
+    "hugo-extended": "0.147.7"
+  }
+}
