@@ -1,0 +1,6 @@
+baseURL = "https://clearsignals.cloud/"
+languageCode = "en-us"
+title = "Clear Signals"
+
+[params]
+  description = "Cutting through noise with evidence. Research-backed insights on money, health, science, and the hidden forces behind your decisions."
