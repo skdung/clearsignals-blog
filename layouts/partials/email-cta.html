@@ -2,8 +2,9 @@
     <div class="email-cta-inner">
         <h2>Get evidence-based insights delivered weekly</h2>
         <p>Join readers who want clear thinking on money, health, and the forces shaping their decisions.</p>
-        <form class="email-cta-form" action="#" method="post">
+        <form class="email-cta-form" action="https://buttondown.com/api/emails/embed-subscribe/clearsignals" method="post" target="popupwindow">
             <input type="email" name="email" placeholder="Enter your email" required class="email-cta-input">
+            <input type="hidden" name="tag" value="{{ .RelPermalink }}">
             <button type="submit" class="btn btn-gold btn-cta">Subscribe</button>
         </form>
         <p class="email-cta-note">Free. No spam. Unsubscribe anytime.</p>

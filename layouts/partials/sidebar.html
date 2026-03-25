@@ -2,8 +2,9 @@
     <div class="sidebar-widget sidebar-signup" id="subscribe">
         <h3>Stay Sharp</h3>
         <p>Get evidence-based insights on money, health, and decision-making delivered to your inbox every week.</p>
-        <form class="sidebar-form" action="#" method="post">
+        <form class="sidebar-form" action="https://buttondown.com/api/emails/embed-subscribe/clearsignals" method="post" target="popupwindow">
             <input type="email" name="email" placeholder="Your email address" required class="sidebar-input">
+            <input type="hidden" name="tag" value="{{ .RelPermalink }}">
             <button type="submit" class="btn btn-gold">Subscribe</button>
         </form>
         <p class="form-note">No spam. Unsubscribe anytime.</p>

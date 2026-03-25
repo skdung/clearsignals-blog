@@ -71,6 +71,29 @@
     {{ end }}
     {{ end }}
 
+    <!-- Schema.org Article structured data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ .Title }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ .Site.Params.author }}"
+        },
+        "datePublished": "{{ .Date.Format "2006-01-02" }}",
+        "description": "{{ .Description }}",
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ .Site.Title }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ "img/logo-horizontal.png" | absURL }}"
+            }
+        }
+    }
+    </script>
+
 </article>
 
 {{ end }}
