@@ -214,6 +214,16 @@ ul, ol {
     color: #ffffff;
 }
 
+.tag-tech {
+    background-color: #0891b2;
+    color: #ffffff;
+}
+
+.tag-transformations {
+    background-color: #be185d;
+    color: #ffffff;
+}
+
 /* ----- Header ----- */
 .site-header {
     background-color: var(--bg-white);

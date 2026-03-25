@@ -34,8 +34,8 @@ enableRobotsTXT = true
   weight = 4
 
 [[menus.main]]
-  name = "Science"
-  url = "/categories/science/"
+  name = "Tech & AI"
+  url = "/categories/tech/"
   weight = 5
 
 [[menus.main]]
