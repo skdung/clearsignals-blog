@@ -2,9 +2,11 @@
   "name": "clearsignals-blog",
   "private": true,
   "scripts": {
-    "build": "hugo"
+    "build": "hugo",
+    "deploy": "wrangler pages deploy public --project-name=clearsignals-blog"
   },
   "devDependencies": {
-    "hugo-extended": "0.147.7"
+    "hugo-extended": "0.147.7",
+    "wrangler": "^4.0.0"
   }
 }
