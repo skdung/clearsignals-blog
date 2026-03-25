@@ -1,18 +1,97 @@
 {{ define "main" }}
-<section class="hero">
-    <h1>{{ .Site.Title }}</h1>
-    <p class="tagline">{{ .Site.Params.description }}</p>
+
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+
+{{ if gt (len $posts) 0 }}
+
+<!-- Featured Article -->
+{{ $featured := index $posts 0 }}
+{{ $featCategories := $featured.Params.categories }}
+{{ $featCategory := "" }}
+{{ with $featCategories }}{{ $featCategory = index . 0 }}{{ end }}
+
+<section class="featured-section">
+    <div class="featured-inner">
+        <div class="featured-content">
+            {{ with $featCategory }}
+            <a href="/categories/{{ . | urlize }}/" class="category-tag tag-{{ . | urlize }}">{{ . | humanize }}</a>
+            {{ end }}
+            <h1 class="featured-title">
+                <a href="{{ $featured.Permalink }}">{{ $featured.Title }}</a>
+            </h1>
+            <p class="featured-excerpt">{{ $featured.Description }}</p>
+            <div class="featured-meta">
+                <span class="featured-author">By {{ .Site.Params.author }}</span>
+                <span class="meta-sep">&middot;</span>
+                <time datetime="{{ $featured.Date.Format "2006-01-02" }}">{{ $featured.Date.Format "January 2, 2006" }}</time>
+                <span class="meta-sep">&middot;</span>
+                <span class="reading-time">{{ math.Round (div (countwords $featured.Content) 250.0) }} min read</span>
+            </div>
+        </div>
+    </div>
 </section>
-<section class="posts">
-    <h2>Latest Articles</h2>
-    {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
-    <article>
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        <time>{{ .Date.Format "January 2, 2006" }}</time>
-        <p>{{ .Description }}</p>
-    </article>
-    {{ else }}
-    <p>First articles coming soon.</p>
-    {{ end }}
+
+<!-- Main Content with Sidebar -->
+<div class="content-with-sidebar">
+    <div class="main-content">
+
+        <!-- Category Sections -->
+        {{ $categories := slice "money" "health" "science" "stories" }}
+        {{ $categoryNames := dict "money" "Money & Mind" "health" "Health" "science" "Science" "stories" "Stories" }}
+        {{ $count := 0 }}
+
+        {{ range $cat := $categories }}
+            {{ $catPosts := where $posts "Params.categories" "intersect" (slice $cat) }}
+            {{ if gt (len $catPosts) 0 }}
+
+            {{ if eq $count 1 }}
+            {{ partial "email-cta.html" $ }}
+            {{ end }}
+
+            <section class="category-section">
+                <div class="section-header">
+                    <h2 class="section-title"><a href="/categories/{{ $cat }}/">{{ index $categoryNames $cat }}</a></h2>
+                    <a href="/categories/{{ $cat }}/" class="section-more">View all &rarr;</a>
+                </div>
+                <div class="article-grid">
+                    {{ range first 3 $catPosts }}
+                        {{ partial "article-card.html" . }}
+                    {{ end }}
+                </div>
+            </section>
+
+            <div class="ad-slot between-articles-ad"></div>
+
+            {{ $count = add $count 1 }}
+            {{ end }}
+        {{ end }}
+
+    </div>
+
+    {{ partial "sidebar.html" . }}
+</div>
+
+{{ else }}
+
+<!-- Launching Soon -->
+<section class="launching-soon">
+    <div class="launching-inner">
+        <img src="/img/logo-stacked.png" alt="{{ .Site.Title }}" class="launching-logo">
+        <h1>Something worth reading is on the way</h1>
+        <p class="launching-text">Clear Signals is an evidence-based publication exploring the hidden forces behind your decisions about money, health, and the world around you. We are putting the finishing touches on our first articles.</p>
+        <div class="launching-topics">
+            <span class="category-tag tag-money">Money &amp; Mind</span>
+            <span class="category-tag tag-health">Health</span>
+            <span class="category-tag tag-science">Science</span>
+            <span class="category-tag tag-stories">Stories</span>
+        </div>
+        <form class="launching-form" action="#" method="post">
+            <input type="email" name="email" placeholder="Get notified when we launch" required class="email-cta-input">
+            <button type="submit" class="btn btn-gold">Notify Me</button>
+        </form>
+    </div>
 </section>
+
+{{ end }}
+
 {{ end }}

@@ -1,0 +1,21 @@
+<header class="site-header">
+    <div class="header-inner">
+        <a href="/" class="logo-link">
+            <img src="/img/logo-horizontal.png" alt="{{ .Site.Title }}" class="logo">
+        </a>
+
+        <nav class="nav-links">
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}" class="nav-link{{ if eq .Name "About" }} nav-about{{ end }}">{{ .Name }}</a>
+            {{ end }}
+            <a href="#subscribe" class="btn btn-subscribe">Subscribe</a>
+        </nav>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+    <div class="mobile-overlay"></div>
+</header>

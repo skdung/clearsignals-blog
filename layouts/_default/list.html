@@ -1,10 +1,39 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ range .Pages }}
-<article>
-    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-    <time>{{ .Date.Format "January 2, 2006" }}</time>
-    <p>{{ .Description }}</p>
-</article>
-{{ end }}
+
+<section class="list-page">
+    <header class="list-header">
+        <h1 class="list-title">{{ .Title }}</h1>
+        {{ with .Description }}<p class="list-description">{{ . }}</p>{{ end }}
+    </header>
+
+    {{ if .Pages }}
+    <div class="article-grid">
+        {{ range .Paginator.Pages }}
+            {{ partial "article-card.html" . }}
+        {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    {{ $paginator := .Paginator }}
+    {{ if gt $paginator.TotalPages 1 }}
+    <nav class="pagination" aria-label="Pagination">
+        {{ if $paginator.HasPrev }}
+        <a href="{{ $paginator.Prev.URL }}" class="pagination-link pagination-prev">&larr; Newer</a>
+        {{ end }}
+
+        <span class="pagination-info">
+            Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+        </span>
+
+        {{ if $paginator.HasNext }}
+        <a href="{{ $paginator.Next.URL }}" class="pagination-link pagination-next">Older &rarr;</a>
+        {{ end }}
+    </nav>
+    {{ end }}
+
+    {{ else }}
+    <p class="list-empty">No articles in this category yet. Check back soon.</p>
+    {{ end }}
+</section>
+
 {{ end }}
