@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="icon" type="image/png" href="/img/logo-icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo-link">
+                <img src="/img/logo-horizontal.png" alt="Clear Signals" class="logo">
+            </a>
+        </nav>
+    </header>
+    <main>{{ block "main" . }}{{ end }}</main>
+    <footer>
+        <img src="/img/logo-icon.png" alt="" class="footer-icon">
+        <p>&copy; {{ now.Year }} Clear Signals. Evidence-based insights on money, health, and the forces behind your decisions.</p>
+    </footer>
+</body>
+</html>
