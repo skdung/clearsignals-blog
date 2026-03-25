@@ -19,21 +19,26 @@ enableRobotsTXT = true
   weight = 1
 
 [[menus.main]]
+  name = "Wealth"
+  url = "/categories/wealth/"
+  weight = 2
+
+[[menus.main]]
   name = "Health"
   url = "/categories/health/"
-  weight = 2
+  weight = 3
+
+[[menus.main]]
+  name = "Mindset"
+  url = "/categories/mindset/"
+  weight = 4
 
 [[menus.main]]
   name = "Science"
   url = "/categories/science/"
-  weight = 3
-
-[[menus.main]]
-  name = "Stories"
-  url = "/categories/stories/"
-  weight = 4
+  weight = 5
 
 [[menus.main]]
   name = "About"
   url = "/about/"
-  weight = 5
+  weight = 6
