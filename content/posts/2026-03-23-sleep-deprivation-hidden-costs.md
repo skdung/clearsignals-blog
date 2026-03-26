@@ -1,10 +1,15 @@
 ---
 title: "The Hidden Costs of Sleep Deprivation Your Doctor Won't Tell You"
+slug: "sleep-deprivation-hidden-costs"
 date: 2026-03-23
 description: "Sleep deprivation costs the US economy $411 billion annually. Here's what the research says about how it's affecting your health and decisions."
-categories: ["health"]
-tags: ["sleep", "health-science", "productivity"]
-image: ""
+tags:
+  - "sleep"
+  - "health-science"
+  - "productivity"
+categories:
+  - "health"
+draft: false
 ---
 
 You probably know that sleep deprivation is bad for you. But what most people underestimate is just how far the damage extends beyond feeling tired. The research paints a picture that should genuinely alarm anyone who routinely gets less than seven hours of sleep.
@@ -13,9 +18,9 @@ A 2016 study by RAND Corporation estimated that sleep deprivation costs the Unit
 
 ## Your Brain on Six Hours
 
-Matthew Walker, a neuroscience professor at UC Berkeley and author of "Why We Sleep," has spent decades documenting what happens to the brain when sleep is restricted. After just one night of sleeping six hours instead of eight, your prefrontal cortex, the region responsible for rational decision-making and impulse control, shows measurably reduced activity.
+Matthew Walker, a neuroscience professor at UC Berkeley and author of *Why We Sleep*, has spent decades documenting what happens to the brain when sleep is restricted. After just one night of sleeping six hours instead of eight, your prefrontal cortex, the region responsible for rational decision-making and impulse control, shows measurably reduced activity.
 
-The result is not subtle. A landmark 2003 study published in Sleep found that people who slept six hours per night for two weeks performed cognitive tasks as poorly as people who had been completely sleep-deprived for 48 hours straight. The critical difference is that the chronically sleep-restricted group did not realize how impaired they were. They rated their own alertness and performance as nearly normal.
+The result is not subtle. A landmark 2003 study published in *Sleep* found that people who slept six hours per night for two weeks performed cognitive tasks as poorly as people who had been completely sleep-deprived for 48 hours straight. The critical difference is that the chronically sleep-restricted group did not realize how impaired they were. They rated their own alertness and performance as nearly normal.
 
 This is the hidden trap. Chronic sleep deprivation erodes your judgment while simultaneously eroding your ability to notice that your judgment is eroded.
 
@@ -23,11 +28,11 @@ This is the hidden trap. Chronic sleep deprivation erodes your judgment while si
 
 Sleep deprivation does not just affect your brain. It triggers a metabolic cascade that touches nearly every system in your body. A 2004 study by Spiegel and colleagues at the University of Chicago showed that restricting sleep to four hours per night for just six days reduced glucose tolerance to levels typically seen in prediabetics.
 
-Leptin, the hormone that signals fullness, drops by 18 percent. Ghrelin, the hormone that signals hunger, rises by 28 percent. This is why sleep-deprived people eat an average of 385 extra calories per day, according to a meta-analysis published in the European Journal of Clinical Nutrition. Over a year, that surplus alone accounts for roughly 40 pounds of potential weight gain.
+Leptin, the hormone that signals fullness, drops by 18 percent. Ghrelin, the hormone that signals hunger, rises by 28 percent. This is why sleep-deprived people eat an average of 385 extra calories per day, according to a meta-analysis published in the *European Journal of Clinical Nutrition*. Over a year, that surplus alone accounts for roughly 40 pounds of potential weight gain.
 
 ## The Immune System Connection
 
-If the metabolic effects are not concerning enough, consider your immune system. A 2015 study in the journal Sleep tracked 164 healthy adults who were deliberately exposed to the common cold virus. Participants who slept fewer than six hours were 4.2 times more likely to catch the cold compared to those who slept more than seven hours.
+If the metabolic effects are not concerning enough, consider your immune system. A 2015 study in the journal *Sleep* tracked 164 healthy adults who were deliberately exposed to the common cold virus. Participants who slept fewer than six hours were 4.2 times more likely to catch the cold compared to those who slept more than seven hours.
 
 Even a single night of four hours of sleep reduces natural killer cell activity by 70 percent. Natural killer cells are your body's first line of defense against infections and cancer cells. This is not a marginal reduction. It is a dramatic collapse in immune surveillance.
 

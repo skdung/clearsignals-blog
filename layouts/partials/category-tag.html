@@ -1,0 +1,10 @@
+{{- $slug := .slug -}}
+{{- $label := humanize (replace $slug "-" " ") -}}
+{{- $class := printf "tag-%s" $slug -}}
+{{- range .site.Params.categories -}}
+  {{- if eq .slug $slug -}}
+    {{- $label = .short_label | default .nav_label -}}
+    {{- $class = .tag_class | default $class -}}
+  {{- end -}}
+{{- end -}}
+<a class="category-badge category-tag {{ $class }}" href="{{ printf "/categories/%s/" $slug | relURL }}">{{ $label }}</a>

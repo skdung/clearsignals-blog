@@ -1,12 +1,22 @@
-<section class="email-cta">
-    <div class="email-cta-inner">
-        <h2>Get evidence-based insights delivered weekly</h2>
-        <p>Join readers who want clear thinking on money, health, and the forces shaping their decisions.</p>
-        <form class="email-cta-form" action="https://buttondown.com/api/emails/embed-subscribe/clearsignals" method="post" target="popupwindow">
-            <input type="email" name="email" placeholder="Enter your email" required class="email-cta-input">
-            <input type="hidden" name="tag" value="{{ .RelPermalink }}">
-            <button type="submit" class="btn btn-gold btn-cta">Subscribe</button>
-        </form>
-        <p class="email-cta-note">Free. No spam. Unsubscribe anytime.</p>
-    </div>
+{{ $page := .page }}
+{{ $site := $page.Site }}
+{{ $title := .title | default $site.Params.newsletter_heading }}
+{{ $copy := .copy | default $site.Params.newsletter_copy }}
+{{ $button := .button | default "Subscribe" }}
+{{ $variant := .variant | default "inline" }}
+{{ $id := .id | default "newsletter-signup" }}
+
+<section id="{{ $id }}" class="email-cta email-cta--{{ $variant }}">
+  <div class="email-copy">
+    <h2>{{ $title }}</h2>
+    <p>{{ $copy }}</p>
+  </div>
+  <form class="newsletter-form" action="{{ $site.Params.buttondown_action }}" method="post" target="popupwindow">
+    <label class="sr-only" for="{{ printf "%s-email" $id }}">Email address</label>
+    <input id="{{ printf "%s-email" $id }}" type="email" name="email" placeholder="you@example.com" required>
+    <input type="hidden" name="tag" value="clear-signals">
+    <input type="hidden" name="metadata[source_url]" value="{{ $page.Permalink }}">
+    <button type="submit">{{ $button }}</button>
+  </form>
+  <p class="fine-print">{{ $site.Params.newsletter_note }}</p>
 </section>

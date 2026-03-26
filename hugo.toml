@@ -1,44 +1,103 @@
 baseURL = "https://clearsignals.cloud/"
 languageCode = "en-us"
 title = "Clear Signals"
-paginate = 12
+summaryLength = 30
 enableRobotsTXT = true
 
-[params]
-  description = "Cutting through noise with evidence. Research-backed insights on money, health, science, and the hidden forces behind your decisions."
-  author = "Archer Keane"
-  tagline = "Cutting through noise with evidence"
+[permalinks]
+  posts = "/posts/:slugorfilename/"
 
 [taxonomies]
-  tag = "tags"
   category = "categories"
+  tag = "tags"
 
-[[menus.main]]
-  name = "Money & Mind"
-  url = "/categories/money/"
-  weight = 1
+[params]
+  author = "Archer Keane"
+  tagline = "Cutting through noise with evidence"
+  description = "Cutting through noise with evidence. Research-backed insights on money, health, science, and the hidden forces behind your decisions."
+  about = "Archer Keane writes about the intersection of psychology, behavioral economics, and everyday decisions. Every article is grounded in peer-reviewed research, real data, and verifiable claims."
+  about_short = "Clear Signals is an evidence-based publication by Archer Keane exploring the hidden forces behind your decisions about money, health, and the world around you."
+  contact_email = "hello@clearsignals.cloud"
+  buttondown_username = "clearsignals"
+  buttondown_action = "https://buttondown.com/api/emails/embed-subscribe/clearsignals"
+  newsletter_heading = "Get evidence-based insights delivered weekly"
+  newsletter_copy = "Join readers who want clear thinking on money, health, and the forces shaping their decisions."
+  newsletter_note = "Free. No spam. Unsubscribe anytime."
 
-[[menus.main]]
-  name = "Wealth"
-  url = "/categories/wealth/"
-  weight = 2
+[[params.categories]]
+  slug = "money"
+  nav_label = "Money & Mind"
+  short_label = "Money"
+  tag_class = "tag-money"
+  show_in_nav = true
+  show_in_home = true
+  show_in_footer = true
 
-[[menus.main]]
-  name = "Health"
-  url = "/categories/health/"
-  weight = 3
+[[params.categories]]
+  slug = "wealth"
+  nav_label = "Wealth"
+  short_label = "Wealth"
+  tag_class = "tag-wealth"
+  show_in_nav = true
+  show_in_home = false
+  show_in_footer = true
 
-[[menus.main]]
-  name = "Mindset"
-  url = "/categories/mindset/"
-  weight = 4
+[[params.categories]]
+  slug = "health"
+  nav_label = "Health"
+  short_label = "Health"
+  tag_class = "tag-health"
+  show_in_nav = true
+  show_in_home = true
+  show_in_footer = true
 
-[[menus.main]]
-  name = "Tech & AI"
-  url = "/categories/tech/"
-  weight = 5
+[[params.categories]]
+  slug = "mindset"
+  nav_label = "Mindset"
+  short_label = "Mindset"
+  tag_class = "tag-mindset"
+  show_in_nav = true
+  show_in_home = false
+  show_in_footer = true
 
-[[menus.main]]
-  name = "About"
-  url = "/about/"
-  weight = 6
+[[params.categories]]
+  slug = "tech"
+  nav_label = "Tech & AI"
+  short_label = "Tech"
+  tag_class = "tag-tech"
+  show_in_nav = true
+  show_in_home = false
+  show_in_footer = true
+
+[[params.categories]]
+  slug = "transformations"
+  nav_label = "Transformations"
+  short_label = "Transformations"
+  tag_class = "tag-transformations"
+  show_in_nav = false
+  show_in_home = false
+  show_in_footer = true
+
+[[params.youtube_channels]]
+  label = "MoneyMind"
+  url = "https://www.youtube.com/@moneymind-e1m"
+
+[[params.youtube_channels]]
+  label = "WealthByte"
+  url = "https://www.youtube.com/@WealthByte-e1m"
+
+[[params.youtube_channels]]
+  label = "MindShift Daily"
+  url = "https://www.youtube.com/@MindShiftDaily-e1m"
+
+[[params.youtube_channels]]
+  label = "HealthByte"
+  url = "https://www.youtube.com/@healthbyte-e1m"
+
+[[params.youtube_channels]]
+  label = "TechPulse"
+  url = "https://www.youtube.com/@TechPulse-e1m"
+
+[[params.youtube_channels]]
+  label = "Space Shift"
+  url = "https://www.youtube.com/@SpaceShift-e1m"

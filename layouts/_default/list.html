@@ -1,39 +1,17 @@
 {{ define "main" }}
-
-<section class="list-page">
-    <header class="list-header">
-        <h1 class="list-title">{{ .Title }}</h1>
-        {{ with .Description }}<p class="list-description">{{ . }}</p>{{ end }}
+  <section class="shell page-shell">
+    <header class="page-header">
+      <p class="eyebrow">{{ if eq .Kind "taxonomy" }}Category{{ else }}Browse{{ end }}</p>
+      <h1>{{ .Title }}</h1>
+      <p class="page-intro">{{ .Description | default .Site.Params.description }}</p>
     </header>
 
-    {{ if .Pages }}
-    <div class="article-grid">
-        {{ range .Paginator.Pages }}
-            {{ partial "article-card.html" . }}
-        {{ end }}
+    <div class="card-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "article-card.html" (dict "page" .) }}
+      {{ else }}
+        <p>No articles yet.</p>
+      {{ end }}
     </div>
-
-    <!-- Pagination -->
-    {{ $paginator := .Paginator }}
-    {{ if gt $paginator.TotalPages 1 }}
-    <nav class="pagination" aria-label="Pagination">
-        {{ if $paginator.HasPrev }}
-        <a href="{{ $paginator.Prev.URL }}" class="pagination-link pagination-prev">&larr; Newer</a>
-        {{ end }}
-
-        <span class="pagination-info">
-            Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
-        </span>
-
-        {{ if $paginator.HasNext }}
-        <a href="{{ $paginator.Next.URL }}" class="pagination-link pagination-next">Older &rarr;</a>
-        {{ end }}
-    </nav>
-    {{ end }}
-
-    {{ else }}
-    <p class="list-empty">No articles in this category yet. Check back soon.</p>
-    {{ end }}
-</section>
-
+  </section>
 {{ end }}

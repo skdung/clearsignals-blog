@@ -1,28 +1,9 @@
-{{ $page := . }}
-{{ $categories := .Params.categories }}
-{{ $category := "" }}
-{{ with $categories }}{{ $category = index . 0 }}{{ end }}
-
-<article class="article-card">
-    {{ with .Params.image }}
-    <a href="{{ $page.Permalink }}" class="card-image-link">
-        <img src="{{ . }}" alt="{{ $page.Title }}" class="card-image" loading="lazy">
-    </a>
-    {{ end }}
-    <div class="card-body">
-        {{ with $category }}
-        <a href="/categories/{{ . | urlize }}/" class="category-tag tag-{{ . | urlize }}">{{ . | humanize }}</a>
-        {{ end }}
-        <h3 class="card-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h3>
-        <p class="card-excerpt">
-            {{ if .Description }}{{ .Description | truncate 120 }}{{ else }}{{ .Summary | plainify | truncate 120 }}{{ end }}
-        </p>
-        <div class="card-meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-            <span class="meta-sep">&middot;</span>
-            <span class="reading-time">{{ math.Round (div (countwords .Content) 250.0) }} min read</span>
-        </div>
-    </div>
+{{ $page := .page }}
+<article class="article-card{{ if .featured }} article-card--featured{{ end }}">
+  {{ with $page.Params.categories }}
+    {{ partial "category-tag.html" (dict "site" $page.Site "slug" (index . 0)) }}
+  {{ end }}
+  <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+  <p>{{ $page.Params.description | default $page.Summary | plainify }}</p>
+  <div class="article-meta">{{ $page.Date.Format "Jan 2, 2006" }} · {{ $page.ReadingTime }} min read</div>
 </article>

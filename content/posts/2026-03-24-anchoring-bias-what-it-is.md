@@ -1,10 +1,15 @@
 ---
 title: "Anchoring Bias: How the First Number You See Controls Your Wallet"
+slug: "anchoring-bias-what-it-is"
 date: 2026-03-24
 description: "The first price you see becomes your reference point for everything after. Here's the research on how anchoring bias costs you money."
-categories: ["money"]
-tags: ["anchoring", "cognitive-bias", "behavioral-finance"]
-image: ""
+tags:
+  - "anchoring"
+  - "cognitive-bias"
+  - "behavioral-finance"
+categories:
+  - "money"
+draft: false
 ---
 
 You walk into a store and see a jacket priced at $500. You keep browsing and find another jacket for $200. It feels like a bargain, right? But step back for a moment. If you had seen the $200 jacket first, without that $500 anchor, would you still think it was a great deal?

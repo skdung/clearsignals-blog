@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <section class="shell page-shell">
+    <div class="content-column">
+      <article class="article">
+        <header class="article-header">
+          <h1>{{ .Title }}</h1>
+          {{ with .Params.description }}
+            <p class="article-subtitle">{{ . }}</p>
+          {{ end }}
+        </header>
+
+        <div class="article-body">
+          {{ .Content }}
+        </div>
+
+        <section class="author-box">
+          <h2>About {{ .Site.Params.author }}</h2>
+          <p>{{ .Site.Params.about }}</p>
+        </section>
+
+        {{ partial "email-cta.html" (dict "page" . "variant" "article" "id" "article-newsletter" "title" .Site.Params.newsletter_heading "copy" .Site.Params.newsletter_copy "button" "Subscribe") }}
+      </article>
+    </div>
+  </section>
+{{ end }}

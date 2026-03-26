@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Clear Signals</title>
+    <link>https://clearsignals.cloud/categories/</link>
+    <description>Recent content in Categories on Clear Signals</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://clearsignals.cloud/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Money</title>
+      <link>https://clearsignals.cloud/categories/money/</link>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://clearsignals.cloud/categories/money/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Health</title>
+      <link>https://clearsignals.cloud/categories/health/</link>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://clearsignals.cloud/categories/health/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

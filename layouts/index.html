@@ -1,98 +1,41 @@
 {{ define "main" }}
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ $featured := first 1 $posts }}
 
-{{ $posts := where .Site.RegularPages "Section" "posts" }}
+  <section class="shell home-shell">
+    <div class="content-column">
+      {{ with $featured }}
+        {{ partial "article-card.html" (dict "page" (index . 0) "featured" true) }}
+      {{ end }}
 
-{{ if gt (len $posts) 0 }}
-
-<!-- Featured Article -->
-{{ $featured := index $posts 0 }}
-{{ $featCategories := $featured.Params.categories }}
-{{ $featCategory := "" }}
-{{ with $featCategories }}{{ $featCategory = index . 0 }}{{ end }}
-
-<section class="featured-section">
-    <div class="featured-inner">
-        <div class="featured-content">
-            {{ with $featCategory }}
-            <a href="/categories/{{ . | urlize }}/" class="category-tag tag-{{ . | urlize }}">{{ . | humanize }}</a>
-            {{ end }}
-            <h1 class="featured-title">
-                <a href="{{ $featured.Permalink }}">{{ $featured.Title }}</a>
-            </h1>
-            <p class="featured-excerpt">{{ $featured.Description }}</p>
-            <div class="featured-meta">
-                <span class="featured-author">By {{ .Site.Params.author }}</span>
-                <span class="meta-sep">&middot;</span>
-                <time datetime="{{ $featured.Date.Format "2006-01-02" }}">{{ $featured.Date.Format "January 2, 2006" }}</time>
-                <span class="meta-sep">&middot;</span>
-                <span class="reading-time">{{ math.Round (div (countwords $featured.Content) 250.0) }} min read</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Main Content with Sidebar -->
-<div class="content-with-sidebar">
-    <div class="main-content">
-
-        <!-- Category Sections -->
-        {{ $categories := slice "money" "wealth" "health" "mindset" "tech" "transformations" }}
-        {{ $categoryNames := dict "money" "Money & Mind" "wealth" "Wealth" "health" "Health" "mindset" "Mindset" "tech" "Tech & AI" "transformations" "Transformations" }}
-        {{ $count := 0 }}
-
-        {{ range $cat := $categories }}
-            {{ $catPosts := where $posts "Params.categories" "intersect" (slice $cat) }}
-            {{ if gt (len $catPosts) 0 }}
-
-            {{ if eq $count 1 }}
-            {{ partial "email-cta.html" $ }}
+      {{ range $index, $category := .Site.Params.categories }}
+        {{ if $category.show_in_home }}
+          {{ $categoryPosts := where $posts "Params.categories" "intersect" (slice $category.slug) }}
+          {{ if gt (len $categoryPosts) 0 }}
+            {{ if gt $index 0 }}
+              {{ partial "email-cta.html" (dict "page" $ "variant" "banner" "id" "home-newsletter" "title" $.Site.Params.newsletter_heading "copy" $.Site.Params.newsletter_copy "button" "Subscribe") }}
             {{ end }}
 
-            <section class="category-section">
-                <div class="section-header">
-                    <h2 class="section-title"><a href="/categories/{{ $cat }}/">{{ index $categoryNames $cat }}</a></h2>
-                    <a href="/categories/{{ $cat }}/" class="section-more">View all &rarr;</a>
-                </div>
-                <div class="article-grid">
-                    {{ range first 3 $catPosts }}
-                        {{ partial "article-card.html" . }}
-                    {{ end }}
-                </div>
+            <section class="section-block">
+              <div class="section-heading">
+                <p class="eyebrow">Category</p>
+                <h2>{{ $category.nav_label }}</h2>
+              </div>
+              <div class="card-grid">
+                {{ range first 3 $categoryPosts }}
+                  {{ partial "article-card.html" (dict "page" .) }}
+                {{ end }}
+              </div>
             </section>
 
-            <div class="ad-slot between-articles-ad"></div>
-
-            {{ $count = add $count 1 }}
-            {{ end }}
+            {{ partial "ad-slot.html" (dict "class" "between-articles-ad" "label" "") }}
+          {{ end }}
         {{ end }}
-
+      {{ end }}
     </div>
 
-    {{ partial "sidebar.html" . }}
-</div>
-
-{{ else }}
-
-<!-- Launching Soon -->
-<section class="launching-soon">
-    <div class="launching-inner">
-        <img src="/img/logo-stacked.png" alt="{{ .Site.Title }}" class="launching-logo">
-        <h1>Something worth reading is on the way</h1>
-        <p class="launching-text">Clear Signals is an evidence-based publication exploring the hidden forces behind your decisions about money, health, and the world around you. We are putting the finishing touches on our first articles.</p>
-        <div class="launching-topics">
-            <span class="category-tag tag-money">Money &amp; Mind</span>
-            <span class="category-tag tag-health">Health</span>
-            <span class="category-tag tag-science">Science</span>
-            <span class="category-tag tag-stories">Stories</span>
-        </div>
-        <form class="launching-form" action="https://buttondown.com/api/emails/embed-subscribe/clearsignals" method="post" target="popupwindow">
-            <input type="email" name="email" placeholder="Get notified when we launch" required class="email-cta-input">
-            <input type="hidden" name="tag" value="launch-notify">
-            <button type="submit" class="btn btn-gold">Notify Me</button>
-        </form>
+    <div class="sidebar-column">
+      {{ partial "sidebar.html" . }}
     </div>
-</section>
-
-{{ end }}
-
+  </section>
 {{ end }}

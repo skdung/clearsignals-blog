@@ -1,12 +1,14 @@
 ---
 title: "About Clear Signals"
+description: "Cutting through noise with evidence. Research-backed insights on money, health, science, and the hidden forces behind your decisions."
+layout: "page"
 ---
 
 Clear Signals is an evidence-based publication exploring the hidden forces behind your decisions about money, health, and the world around you.
 
 ## Why "Clear Signals"?
 
-Every day, you're bombarded with noise -- clickbait headlines, contradictory advice, opinions dressed up as facts. Clear Signals cuts through that noise with research-backed insights you can actually use.
+Every day, you're bombarded with noise: clickbait headlines, contradictory advice, opinions dressed up as facts. Clear Signals cuts through that noise with research-backed insights you can actually use.
 
 We don't do hot takes. We don't chase trends. Every article starts with a question and follows the evidence wherever it leads. If the research contradicts conventional wisdom, we say so. If the data is uncertain, we say that too.
 
@@ -18,10 +20,10 @@ The goal is not to tell you what to think, but to give you the tools to think mo
 
 ## What You'll Find Here
 
-- **Money & Mind** -- How cognitive biases affect your financial decisions, from anchoring effects in salary negotiations to the sunk cost fallacy keeping you in bad investments.
-- **Health** -- Evidence-based insights on wellness, sleep, nutrition, and the human body, grounded in peer-reviewed research rather than wellness trends.
-- **Science** -- The fascinating research shaping our understanding of human behavior, decision-making, and the natural world.
-- **Stories** -- Real narratives that reveal how the world actually works, from historical case studies to modern-day examples of hidden forces in action.
+- **Money & Mind**: how cognitive biases affect your financial decisions, from anchoring effects in salary negotiations to the sunk cost fallacy keeping you in bad investments.
+- **Health**: evidence-based insights on sleep, recovery, nutrition, and the human body, grounded in peer-reviewed research rather than wellness trends.
+- **Tech & AI**: practical analysis of the tools and systems reshaping how people work and decide.
+- **Mindset**: the psychology behind attention, habits, motivation, and performance.
 
 ## Our Standards
 
@@ -29,4 +31,4 @@ Every claim in a Clear Signals article is backed by at least one peer-reviewed s
 
 ## Stay Connected
 
-Subscribe to get weekly insights delivered to your inbox. No spam, no fluff -- just clear signals in a noisy world.
+Subscribe to get weekly insights delivered to your inbox. No spam, no fluff, just clear signals in a noisy world.

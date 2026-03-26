@@ -1,21 +1,18 @@
 <header class="site-header">
-    <div class="header-inner">
-        <a href="/" class="logo-link">
-            <img src="/img/logo-horizontal.png" alt="{{ .Site.Title }}" class="logo">
-        </a>
+  <div class="shell header-shell">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <img src="{{ "img/logo-horizontal.png" | relURL }}" alt="{{ .Site.Title }}" class="brand-logo">
+    </a>
 
-        <nav class="nav-links">
-            {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}" class="nav-link{{ if eq .Name "About" }} nav-about{{ end }}">{{ .Name }}</a>
-            {{ end }}
-            <a href="#subscribe" class="btn btn-subscribe">Subscribe</a>
-        </nav>
+    <nav class="primary-nav" aria-label="Primary">
+      {{ range .Site.Params.categories }}
+        {{ if .show_in_nav }}
+          <a href="{{ printf "/categories/%s/" .slug | relURL }}">{{ .nav_label }}</a>
+        {{ end }}
+      {{ end }}
+      <a href="{{ "/about/" | relURL }}">About</a>
+    </nav>
 
-        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-    </div>
-    <div class="mobile-overlay"></div>
+    <a class="subscribe-link" href="{{ if .IsHome }}#home-newsletter{{ else }}#article-newsletter{{ end }}">Subscribe</a>
+  </div>
 </header>

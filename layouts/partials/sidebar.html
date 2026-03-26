@@ -1,20 +1,21 @@
 <aside class="sidebar">
-    <div class="sidebar-widget sidebar-signup" id="subscribe">
-        <h3>Stay Sharp</h3>
-        <p>Get evidence-based insights on money, health, and decision-making delivered to your inbox every week.</p>
-        <form class="sidebar-form" action="https://buttondown.com/api/emails/embed-subscribe/clearsignals" method="post" target="popupwindow">
-            <input type="email" name="email" placeholder="Your email address" required class="sidebar-input">
-            <input type="hidden" name="tag" value="{{ .RelPermalink }}">
-            <button type="submit" class="btn btn-gold">Subscribe</button>
-        </form>
-        <p class="form-note">No spam. Unsubscribe anytime.</p>
-    </div>
+  {{ partial "email-cta.html" (dict "page" . "variant" "sidebar" "id" "sidebar-newsletter" "title" "Get weekly insights" "copy" "Research-backed notes on money, health, science, and better decisions." "button" "Subscribe") }}
 
-    <div class="sidebar-widget sidebar-about">
-        <h3>About</h3>
-        <p>Clear Signals is an evidence-based publication by <strong>Archer Keane</strong> exploring the hidden forces behind your decisions about money, health, and the world around you.</p>
-        <a href="/about/" class="sidebar-link">Learn more &rarr;</a>
-    </div>
+  <section class="sidebar-card">
+    <h2>About</h2>
+    <p>{{ .Site.Params.about_short }}</p>
+  </section>
 
-    <div class="ad-slot sidebar-ad"></div>
+  <section class="sidebar-card">
+    <h2>Recent articles</h2>
+    <ul class="footer-list">
+      {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ else }}
+        <li>No published posts yet.</li>
+      {{ end }}
+    </ul>
+  </section>
+
+  {{ partial "ad-slot.html" (dict "class" "sidebar-ad" "label" "Sidebar ad placeholder") }}
 </aside>

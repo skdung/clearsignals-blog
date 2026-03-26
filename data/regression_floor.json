@@ -1,0 +1,37 @@
+{
+  "required_post_slugs": [
+    "anchoring-bias-what-it-is",
+    "why-smart-people-make-bad-decisions",
+    "sleep-deprivation-hidden-costs"
+  ],
+  "required_page_paths": [
+    "about",
+    "privacy",
+    "subscribe"
+  ],
+  "required_nav_labels": [
+    "Money & Mind",
+    "Wealth",
+    "Health",
+    "Mindset",
+    "Tech & AI",
+    "About",
+    "Subscribe"
+  ],
+  "required_footer_categories": [
+    "Money & Mind",
+    "Wealth",
+    "Health",
+    "Mindset",
+    "Tech & AI",
+    "Transformations"
+  ],
+  "required_youtube_channels": [
+    "MoneyMind",
+    "WealthByte",
+    "MindShift Daily",
+    "HealthByte",
+    "TechPulse",
+    "Space Shift"
+  ]
+}

@@ -1,47 +1,36 @@
-<div class="ad-slot footer-ad"></div>
-
 <footer class="site-footer">
-    <div class="footer-inner">
-        <div class="footer-col footer-brand">
-            <a href="/" class="footer-logo-link">
-                <img src="/img/logo-horizontal.png" alt="{{ .Site.Title }}" class="footer-logo">
-            </a>
-            <p class="footer-tagline">{{ .Site.Params.tagline }}</p>
-            <p class="footer-description">Research-backed insights on money, health, science, and the hidden forces behind your decisions.</p>
-        </div>
-
-        <div class="footer-col footer-categories">
-            <h4>Categories</h4>
-            <ul>
-                <li><a href="/categories/money/">Money &amp; Mind</a></li>
-                <li><a href="/categories/wealth/">Wealth</a></li>
-                <li><a href="/categories/health/">Health</a></li>
-                <li><a href="/categories/mindset/">Mindset</a></li>
-                <li><a href="/categories/tech/">Tech &amp; AI</a></li>
-                <li><a href="/categories/transformations/">Transformations</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col footer-connect">
-            <h4>Connect</h4>
-            <ul>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/privacy/">Privacy Policy</a></li>
-                <li><a href="mailto:hello@clearsignals.cloud">Email Us</a></li>
-            </ul>
-            <h4 style="margin-top: 20px;">YouTube</h4>
-            <ul>
-                <li><a href="https://youtube.com/@MoneyMind-e1m" target="_blank" rel="noopener">MoneyMind</a></li>
-                <li><a href="https://youtube.com/@WealthByte-e1m" target="_blank" rel="noopener">WealthByte</a></li>
-                <li><a href="https://youtube.com/@MindShiftDaily-e1m" target="_blank" rel="noopener">MindShift Daily</a></li>
-                <li><a href="https://youtube.com/@HealthByte-e1m" target="_blank" rel="noopener">HealthByte</a></li>
-                <li><a href="https://youtube.com/@TechPulse-e1m" target="_blank" rel="noopener">TechPulse</a></li>
-                <li><a href="https://youtube.com/@SpaceShift-e1m" target="_blank" rel="noopener">Space Shift</a></li>
-            </ul>
-        </div>
+  <div class="shell footer-shell">
+    <div>
+      <h2>{{ .Site.Title }}</h2>
+      <p>{{ .Site.Params.tagline }}</p>
+      <p>{{ .Site.Params.description }}</p>
     </div>
 
-    <div class="footer-bottom">
-        <p>&copy; {{ now.Year }} Clear Signals. All rights reserved.</p>
+    <div>
+      <h3>Categories</h3>
+      <ul class="footer-list">
+        {{ range .Site.Params.categories }}
+          {{ if .show_in_footer }}
+            <li><a href="{{ printf "/categories/%s/" .slug | relURL }}">{{ .nav_label }}</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
     </div>
+
+    <div>
+      <h3>Connect</h3>
+      <ul class="footer-list">
+        <li><a href="{{ "/about/" | relURL }}">About</a></li>
+        <li><a href="{{ "/privacy/" | relURL }}">Privacy Policy</a></li>
+        <li><a href="{{ printf "mailto:%s" .Site.Params.contact_email }}">{{ .Site.Params.contact_email }}</a></li>
+      </ul>
+
+      <h3>YouTube</h3>
+      <ul class="footer-list">
+        {{ range .Site.Params.youtube_channels }}
+          <li><a href="{{ .url }}">{{ .label }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
 </footer>

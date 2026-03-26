@@ -1,10 +1,15 @@
 ---
 title: "Why the Smartest People Make the Worst Financial Decisions"
+slug: "why-smart-people-make-bad-decisions"
 date: 2026-03-22
 description: "Intelligence doesn't protect you from cognitive biases. In fact, research shows it can make you more susceptible."
-categories: ["money"]
-tags: ["decision-making", "intelligence", "behavioral-economics"]
-image: ""
+tags:
+  - "decision-making"
+  - "intelligence"
+  - "behavioral-economics"
+categories:
+  - "money"
+draft: false
 ---
 
 There is a comforting assumption most people carry around: the smarter you are, the better your decisions. It makes intuitive sense. If you can solve complex problems, analyze data, and think abstractly, surely you can navigate personal finance better than someone who cannot.
@@ -21,7 +26,7 @@ Why? Because intelligent people are better at rationalizing. When you are skille
 
 ## Overconfidence and the Expert Problem
 
-The overconfidence effect hits high performers especially hard. A 2015 study published in the Journal of Financial Economics tracked the trading behavior of individual investors and found that those who described themselves as knowledgeable about finance traded 67 percent more frequently than average investors, but earned significantly lower returns.
+The overconfidence effect hits high performers especially hard. A 2015 study published in the *Journal of Financial Economics* tracked the trading behavior of individual investors and found that those who described themselves as knowledgeable about finance traded 67 percent more frequently than average investors, but earned significantly lower returns.
 
 The pattern is consistent across professions. Doctors with more experience show greater overconfidence in their diagnoses. Lawyers who have won several cases become more likely to take risky litigation strategies. Fund managers with strong track records take increasingly concentrated bets.
 
