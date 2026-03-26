@@ -14,7 +14,7 @@ We don't do hot takes. We don't chase trends. Every article starts with a questi
 
 ## Who Writes This?
 
-**Archer Keane** writes about the intersection of psychology, behavioral economics, and everyday decisions. Every article is grounded in peer-reviewed research, real data, and verifiable claims.
+**Archer Sennett** writes about the intersection of psychology, behavioral economics, and everyday decisions. Every article is grounded in peer-reviewed research, real data, and verifiable claims.
 
 The goal is not to tell you what to think, but to give you the tools to think more clearly about the decisions that matter most: how you spend your money, how you take care of your health, and how you understand the world around you.
 

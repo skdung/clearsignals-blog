@@ -12,11 +12,11 @@ enableRobotsTXT = true
   tag = "tags"
 
 [params]
-  author = "Archer Keane"
+  author = "Archer Sennett"
   tagline = "Cutting through noise with evidence"
   description = "Cutting through noise with evidence. Research-backed insights on money, health, science, and the hidden forces behind your decisions."
-  about = "Archer Keane writes about the intersection of psychology, behavioral economics, and everyday decisions. Every article is grounded in peer-reviewed research, real data, and verifiable claims."
-  about_short = "Clear Signals is an evidence-based publication by Archer Keane exploring the hidden forces behind your decisions about money, health, and the world around you."
+  about = "Archer Sennett writes about the intersection of psychology, behavioral economics, and everyday decisions. Every article is grounded in peer-reviewed research, real data, and verifiable claims."
+  about_short = "Clear Signals is an evidence-based publication by Archer Sennett exploring the hidden forces behind your decisions about money, health, and the world around you."
   contact_email = "hello@clearsignals.cloud"
   buttondown_username = "clearsignals"
   buttondown_action = "https://buttondown.com/api/emails/embed-subscribe/clearsignals"
