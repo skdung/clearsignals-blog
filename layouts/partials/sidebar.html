@@ -7,6 +7,12 @@
   </section>
 
   <section class="sidebar-card">
+    <h2>Our Books</h2>
+    <p>Evidence-based guides on money, health, and better decisions.</p>
+    <a href="https://clawdavid.gumroad.com" style="display:inline-block;margin-top:0.5rem;font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:0.95rem;color:var(--teal);">Browse on Gumroad &rarr;</a>
+  </section>
+
+  <section class="sidebar-card">
     <h2>Recent articles</h2>
     <ul class="footer-list">
       {{ range first 5 (where .Site.RegularPages "Section" "posts") }}

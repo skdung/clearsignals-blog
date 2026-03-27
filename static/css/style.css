@@ -1,5 +1,5 @@
 :root {
-  --bg: #fafafa;
+  --bg: #f7f9fa;
   --surface: #ffffff;
   --teal: #1a5c6b;
   --teal-soft: #e8f4f7;
@@ -16,10 +16,11 @@
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: linear-gradient(180deg, #f8fafb, #f5f7f8);
   color: var(--text);
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.75;
+  min-height: 100vh;
 }
 
 a {
@@ -164,6 +165,11 @@ a:hover {
   box-shadow: var(--shadow);
 }
 
+.sidebar-card {
+  border-color: #d8dde0;
+  box-shadow: 0 2px 8px rgba(26, 92, 107, 0.06), 0 8px 24px rgba(26, 92, 107, 0.04);
+}
+
 .article-card,
 .sidebar-card,
 .author-box,
@@ -178,7 +184,7 @@ a:hover {
 }
 
 .article-card--featured {
-  background: linear-gradient(145deg, #f5f0e5, #ffffff);
+  background: linear-gradient(145deg, #edf5f7, #ffffff);
 }
 
 .article-card h2,
@@ -227,6 +233,7 @@ a:hover {
   display: grid;
   gap: 1rem;
   margin-top: 1.5rem;
+  background: #eef2f4;
 }
 
 .newsletter-form {
@@ -246,13 +253,14 @@ a:hover {
 .ad-slot {
   display: grid;
   place-items: center;
-  min-height: 110px;
+  min-height: 0;
   margin-top: 1.5rem;
-  padding: 1rem;
-  color: var(--muted);
-  font: 600 0.9rem/1.4 Inter, system-ui, -apple-system, sans-serif;
-  background: linear-gradient(180deg, #fff, #f7fafb);
-  border-style: dashed;
+  padding: 0;
+  font-size: 0;
+  color: transparent;
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .page-header {
